@@ -124,7 +124,7 @@ class KLogger
         if ($severity === false) {
             $severity = self::$_defaultSeverity;
         }
-        
+
         if ($logDirectory === false) {
             if (count(self::$instances) > 0) {
                 return current(self::$instances);
@@ -232,7 +232,7 @@ class KLogger
 
     /**
      * Sets the date format used by all instances of KLogger
-     * 
+     *
      * @param string $dateFormat Valid format string for date()
      */
     public static function setDateFormat($dateFormat)
@@ -266,7 +266,7 @@ class KLogger
 
     /**
      * Writes a $line to the log with a severity level of WARN. Generally
-     * corresponds to E_WARNING, E_USER_WARNING, E_CORE_WARNING, or 
+     * corresponds to E_WARNING, E_USER_WARNING, E_CORE_WARNING, or
      * E_COMPILE_WARNING
      *
      * @param string $line Information to log
@@ -371,25 +371,25 @@ class KLogger
 
         switch ($level) {
             case self::EMERG:
-                return "$time - EMERG -->";
+                return "$time - EMERG  -->";
             case self::ALERT:
-                return "$time - ALERT -->";
+                return "$time - ALERT  -->";
             case self::CRIT:
-                return "$time - CRIT -->";
+                return "$time - CRIT   -->";
             case self::FATAL: # FATAL is an alias of CRIT
-                return "$time - FATAL -->";
+                return "$time - FATAL  -->";
             case self::NOTICE:
                 return "$time - NOTICE -->";
             case self::INFO:
-                return "$time - INFO -->";
+                return "$time - INFO   -->";
             case self::WARN:
-                return "$time - WARN -->";
+                return "$time - WARN   -->";
             case self::DEBUG:
-                return "$time - DEBUG -->";
+                return "$time - DEBUG  -->";
             case self::ERR:
-                return "$time - ERROR -->";
+                return "$time - ERROR  -->";
             default:
-                return "$time - LOG -->";
+                return "$time - LOG    -->";
         }
     }
 }
